@@ -1,0 +1,56 @@
+[tool.poetry]
+name = "unknown-backend"
+version = "0.1.15"
+description = "You know, for shit."
+authors = ["yongwoo <yongwoo@crowdworks.kr>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+sqlalchemy = {extras = ["asyncio"], version = "^2.0.25"}
+aiosqlite = "0.19.0"
+aiomysql = "0.2.0"
+mysql-connector-python = "8.3.0"
+python-multipart = "0.0.9"
+fastapi = "^0.109.2"
+prometheus-client = "^0.20.0"
+prometheus-fastapi-instrumentator = "^6.1.0"
+tqdm = "^4.66.2"
+uvicorn = {extras = ["standard"], version = "^0.27.1"}
+starlette-context = "^0.3.6"
+black = "^24.2.0"
+pydantic-settings = "^2.1.0"
+pyyaml = "^6.0.1"
+httpx = "^0.26.0"
+gunicorn = "^21.2.0"
+
+[tool.poetry.group.dev.dependencies]
+mock = "^5.1.0"
+pytest = "^8.0.0"
+pytest-env = "^1.1.3"
+pytest-mock = "^3.12.0"
+pytest-asyncio = "^0.23.4"
+pytest-freezegun = "^0.4.2"
+pytest-xdist = "^3.5.0"
+pre-commit = "^3.2.0"
+pytest-cov = "^4.1.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[black]
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
